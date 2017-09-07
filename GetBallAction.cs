@@ -64,14 +64,6 @@ public class GetBallAction : Action
             thisAIPlayer.GetComponent<PlayerMovement>().hasBall = false;
             return;  //no ball in range to grab/catch
         }
-        ////Free up 'spawn point' if from spawn point
-        //for (int idx = 0; idx < thisAIPlayer.numberPlayers ; idx++)
-        //{
-        //    if (closestBall.transform.position == ArenaMatchManager.ballPlaces[idx].ballLocation.position)
-        //    {
-        //        ArenaMatchManager.ballPlaces[idx].available = true;
-        //    }
-        //}
         //Put ball in hand
         closestBall.transform.SetParent(thisAIPlayer.GetComponent<PlayerMovement>().myRightHand);
         closestBall.GetComponent<Rigidbody>().isKinematic = true;
