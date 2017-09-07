@@ -25,17 +25,9 @@ public class State : ScriptableObject
 
     private void CheckTransitions(PlayerStateController controller)
     {
-        //if (controller.stateTimeElapsed > controller.debugPrintTime)
-        //{
-        //    //Debug.Log("S-CT " + transitions.Length + " " + controller);
-        //}
         for (int i = 0; i < transitions.Length; i++)
         {
             bool decisionSucceeded = transitions[i].decision.Decide(controller);
-            //if (controller.stateTimeElapsed > controller.debugPrintTime)
-            //{
-            //    //Debug.Log("S-CT " + i + " " + controller + decisionSucceeded);
-            //}
             if (decisionSucceeded)
             {
                 controller.TransitionToState(transitions[i].trueState);
